@@ -9,7 +9,6 @@
     <component
       :is="sectionViewComponent"
       :section="section"
-      :rows="rows"
       :controls="controls"
       :key="section.uniqueId"
       :permissions="permissions"
@@ -24,7 +23,6 @@ export default {
   components: { SectionNavigationBar },
   props: {
     section: Object,
-    rows: Object,
     controls: Object,
     permissions: Object,
   },

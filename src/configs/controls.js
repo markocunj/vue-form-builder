@@ -297,16 +297,11 @@ const CONTROL_DEFAULT_DATA = {
   name: "", // :name
 
   label: "",
-  subLabel: "",
   isShowLabel: true,
 
   placeholderText: "", // :placeholder
 
   containerClass: STYLES.COLUMNS.COL4,
-  additionalContainerClass: "", // :class for the <div> outer container
-
-  additionalFieldClass: "", // :class for <input> <select> ...
-  additionalLabelClass: "", // :class for the <label>
 
   defaultValue: "",
 
