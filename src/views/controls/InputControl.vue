@@ -7,8 +7,8 @@
       :placeholder="control.placeholderText"
       :id="control.uniqueId"
       :name="control.name || control.uniqueId"
+      @input="updateValue(valueS)"
     >
-      <input :value="value" @input="updateValue($event.target.value)" />
     </multiselect>
     <input
       v-else
@@ -36,7 +36,8 @@ export default {
   components: { Multiselect },
   data() {
     return {
-      valueS: "",
+      valueS: null,
+      test: null,
     };
   },
 };
