@@ -3,12 +3,6 @@ import FormBuilder from "@/components/FormBuilder";
 import FormRenderer from "@/components/FormRenderer";
 import BaseControlSkeleton from "@/skeletons/controls/BaseControlSkeleton";
 import BaseControlConfigSkeleton from "@/skeletons/controls/BaseControlConfigSkeleton";
-import Vue from "vue";
-import axios from "axios";
-import VueAxios from "vue-axios";
-Vue.use(VueAxios, axios);
-
-import "@/assets/v-form-builder.css";
 
 // Create module definition for Vue.use()
 const VueFormBuilderPlugin = {

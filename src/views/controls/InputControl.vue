@@ -1,9 +1,10 @@
 <template>
   <div>
     <multiselect
-      v-if="control.autocomplete != ''"
+      v-if="test == true"
       v-model="valueS"
       :options="control.autocomplete"
+      :multiple="true"
       :placeholder="control.placeholderText"
       :id="control.uniqueId"
       :name="control.name || control.uniqueId"
@@ -26,6 +27,10 @@
 <script>
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
 import Multiselect from "vue-multiselect";
+import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 /**
  * InputControl doesn't need to setValue. We can eventually assign the bind the value into the <input>
  * Safe safe...
@@ -39,6 +44,26 @@ export default {
       valueS: null,
       test: null,
     };
+  },
+  mounted() {
+    if (
+      this.control.autocomplete == [] &&
+      this.control.autocompleteLink == ""
+    ) {
+      this.test = false;
+    } else {
+      this.test = true;
+      if (this.control.autocompleteLink != "") {
+        Vue.axios
+          .get(this.control.autocompleteLink)
+          .then((response) => {
+            this.control.autocomplete = response.data;
+          })
+          .catch((error) => {
+            console.error(error.message);
+          });
+      }
+    }
   },
 };
 </script>

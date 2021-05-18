@@ -66,6 +66,9 @@
 import SidebarToggleableContainer from "@/views/container-views/SidebarToggleableContainer";
 import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
 import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 
 export default {
   name: "AutocompleteComponent",
