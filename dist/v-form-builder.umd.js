@@ -12097,12 +12097,12 @@ var FILE_UPLOAD_MODES = {
   }
 };
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ba0436c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/InputControl.vue?vue&type=template&id=f7d70956&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ba0436c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/InputControl.vue?vue&type=template&id=53806ff3&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.test == true)?_c('multiselect',{attrs:{"options":_vm.control.autocomplete,"multiple":true,"placeholder":_vm.control.placeholderText,"id":_vm.control.uniqueId,"name":_vm.control.name || _vm.control.uniqueId},on:{"input":function($event){return _vm.updateValue(_vm.valueS)}},model:{value:(_vm.valueS),callback:function ($$v) {_vm.valueS=$$v},expression:"valueS"}}):_c('input',{class:_vm.controlFieldClass,attrs:{"id":_vm.control.uniqueId,"type":"text","name":_vm.control.name || _vm.control.uniqueId,"placeholder":_vm.control.placeholderText},domProps:{"value":_vm.value},on:{"input":function($event){return _vm.updateValue($event.target.value)}}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/InputControl.vue?vue&type=template&id=f7d70956&scoped=true&
+// CONCATENATED MODULE: ./src/views/controls/InputControl.vue?vue&type=template&id=53806ff3&scoped=true&
 
 // EXTERNAL MODULE: ./src/mixins/control-field-extend-mixin.js
 var control_field_extend_mixin = __webpack_require__("653e");
@@ -12176,9 +12176,9 @@ external_commonjs_vue_commonjs2_vue_root_Vue_default.a.use(vue_axios_es5_default
   mounted: function mounted() {
     var _this = this;
 
-    if (this.control.autocomplete == [] && this.control.autocompleteLink == "") {
-      this.test = false;
-    } else {
+    if (this.control.autocomplete.length > 0 || this.control.autocompleteLink != "") {
+      console.log(this.control.autocomplete, this.control.autocompleteLink);
+      console.log("Uso unutra");
       this.test = true;
 
       if (this.control.autocompleteLink != "") {
@@ -12188,6 +12188,8 @@ external_commonjs_vue_commonjs2_vue_root_Vue_default.a.use(vue_axios_es5_default
           console.error(error.message);
         });
       }
+    } else {
+      this.test = false;
     }
   }
 });
@@ -12214,7 +12216,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "f7d70956",
+  "53806ff3",
   null
   
 )

@@ -47,11 +47,11 @@ export default {
   },
   mounted() {
     if (
-      this.control.autocomplete == [] &&
-      this.control.autocompleteLink == ""
+      this.control.autocomplete.length > 0 ||
+      this.control.autocompleteLink != ""
     ) {
-      this.test = false;
-    } else {
+      console.log(this.control.autocomplete, this.control.autocompleteLink);
+      console.log("Uso unutra");
       this.test = true;
       if (this.control.autocompleteLink != "") {
         Vue.axios
@@ -63,6 +63,8 @@ export default {
             console.error(error.message);
           });
       }
+    } else {
+      this.test = false;
     }
   },
 };
