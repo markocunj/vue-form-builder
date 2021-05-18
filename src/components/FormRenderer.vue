@@ -65,7 +65,7 @@ export default {
   data: () => ({
     formData: null,
   }),
-  mounted() {
+  created() {
     if (this.formData.autocompleteLink != "") {
       Vue.axios
         .get(this.autocompleteLink)
