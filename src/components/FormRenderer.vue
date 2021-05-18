@@ -53,6 +53,10 @@
 <script>
 import FormRendererBusiness from "@/mixins/form-renderer-mixins";
 import SectionContainer from "@/views/renderer/SectionContainer";
+import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 
 export default {
   name: "FormRenderer",
@@ -61,5 +65,17 @@ export default {
   data: () => ({
     formData: null,
   }),
+  mounted() {
+    if (this.formData.autocompleteLink != "") {
+      Vue.axios
+        .get(this.autocompleteLink)
+        .then((response) => {
+          this.control.autocomplete = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  },
 };
 </script>
