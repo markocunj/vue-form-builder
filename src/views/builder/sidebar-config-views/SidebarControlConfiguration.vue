@@ -23,13 +23,14 @@
       />
     </SidebarToggleableContainer>
 
+    <AutocompleteComponent v-if="control.type == 'input'" :control="control" />
+
     <!-- Validation of the control / same for all -->
     <ControlValidationInformation
       v-if="!isValidationDisabled && permissions.canUpdateControlValidation"
       :control="control"
     />
 
-    <AutocompleteComponent v-if="control.type == 'input'" :control="control" />
     <hr />
     <div class="buttons">
       <button :class="styles.BUTTON.PRIMARY" @click="save(false)">

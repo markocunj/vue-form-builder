@@ -312,6 +312,7 @@ const CONTROL_DEFAULT_DATA = {
   validations: [],
 
   // data of the others - coming up later
+  autocompleteLink: "",
   autocomplete: [],
 };
 

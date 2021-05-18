@@ -4,16 +4,9 @@
  */
 
 const FORM_DEFAULT_DATA = {
-    headline: "",
-    subHeadline: "",
-    isShowHeadline: false,
-
-    // <form></form> tag ??
-    renderFormTag: false,
-    formActionURL: "",
-    formMethod: "POST",
+  headline: "",
+  subHeadline: "",
+  isShowHeadline: false,
 };
 
-export {
-    FORM_DEFAULT_DATA
-}
+export { FORM_DEFAULT_DATA };
