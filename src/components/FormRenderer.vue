@@ -21,6 +21,7 @@
       <SectionContainer
         v-for="sectionData in sortedSections"
         :section="sectionData"
+        :rows="formData.rows"
         :controls="formData.controls"
         :key="sectionData.uniqueId"
         :value-container="valueContainer"
@@ -41,6 +42,7 @@
       <SectionContainer
         v-for="sectionData in sortedSections"
         :section="sectionData"
+        :rows="formData.rows"
         :controls="formData.controls"
         :key="sectionData.uniqueId"
         :value-container="valueContainer"

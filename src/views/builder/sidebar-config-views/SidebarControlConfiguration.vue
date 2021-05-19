@@ -8,6 +8,10 @@
       :control="control"
     />
 
+    <ControlStylingInformation
+      v-if="permissions.canUpdateControlStyling"
+      :control="control"
+    />
     <!-- Control specific configuration / Only render it if the control has specific configuration view -->
     <SidebarToggleableContainer
       v-if="
@@ -49,6 +53,7 @@ import { SIDEBAR_BODY_MIXIN } from "@/mixins/sidebar-body-mixin";
 import SidebarToggleableContainer from "@/views/container-views/SidebarToggleableContainer";
 import ControlBasicInformation from "@/views/builder/sidebar-config-views/control-configuration-views/ControlBasicInformation";
 import AutocompleteComponent from "@/views/builder/sidebar-config-views/control-configuration-views/AutocompleteComponent";
+import ControlStylingInformation from "@/views/builder/sidebar-config-views/control-configuration-views/ControlStylingInformation";
 import { CONTROLS } from "@/configs/controls";
 import { HELPER } from "@/libraries/helper";
 import ControlValidationInformation from "@/views/builder/sidebar-config-views/control-configuration-views/ControlValidationInformation";
@@ -57,6 +62,7 @@ export default {
   name: "SidebarControlConfiguration",
   components: {
     ControlValidationInformation,
+    ControlStylingInformation,
     ControlBasicInformation,
     SidebarToggleableContainer,
     AutocompleteComponent,

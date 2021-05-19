@@ -246,6 +246,7 @@ const CONTROLS = {
     configData: {
       buttonClass: STYLES.BUTTON.PRIMARY,
       buttonType: "button", // submit/reset/button/...
+      postLink: "",
 
       emitEventCode: "", // like: "BtnClicked/clicked/change"
       emitEventData: "", // special data to emit to let you know which button is clicked
@@ -305,6 +306,7 @@ const CONTROL_DEFAULT_DATA = {
 
   defaultValue: "",
 
+  rows: [],
   /**
    * Validation that applied to the control
    * @var {ValidationRule[]} validations

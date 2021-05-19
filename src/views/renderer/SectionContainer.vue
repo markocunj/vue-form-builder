@@ -4,6 +4,7 @@
       :is="sectionViewComponent"
       :section="section"
       :controls="controls"
+      :rows="rows"
       :key="section.uniqueId"
       :value-container="valueContainer"
       :validation-errors="validationErrors"
@@ -19,6 +20,7 @@ export default {
 
   props: {
     section: Object,
+    rows: Object,
     controls: Object,
     valueContainer: Object,
     validationErrors: Object,

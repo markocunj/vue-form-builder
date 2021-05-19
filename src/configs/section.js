@@ -77,6 +77,7 @@ const SECTION_DEFAULT_DATA = {
 
   sortOrder: 0,
   type: "",
+  rows: [],
   controls: [], // array of controlIds
 };
 
