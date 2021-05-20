@@ -59,6 +59,36 @@
         <strong>Error!</strong> {{ info }}
       </div>
     </div>
+    <div>
+      <label>Autocomplete default values</label>
+      <input
+        type="text"
+        :class="styles.FORM.FORM_CONTROL"
+        v-model="defaultValueParts"
+        v-on:keyup.enter="addingToDefault()"
+      />
+    </div>
+    <div class="buttons">
+      <button :class="styles.BUTTON.INFO" @click="addingToDefault()">
+        Add
+      </button>
+    </div>
+    <div
+      :class="styles.FORM.FORM_GROUP"
+      class="remove"
+      v-for="(parts, tt) in defaultValueArray"
+      :key="tt"
+    >
+      {{ parts }}
+      <strong
+        ><a
+          class="removeButton"
+          style="float: right; color: red; cursor: pointer;"
+          @click="removingFromDefault(tt)"
+          >&#215;</a
+        ></strong
+      >
+    </div>
   </SidebarToggleableContainer>
 </template>
 
@@ -75,6 +105,8 @@ export default {
   mixins: [STYLE_INJECTION_MIXIN],
   data() {
     return {
+      defaultValueArray: [],
+      defaultValueParts: "",
       arrayWithParts: [],
       autoCompleteParts: "",
       checkbox: null,
@@ -109,6 +141,18 @@ export default {
       for (let i = 0; i < this.arrayWithParts.length + 1; ++i) {
         if (index == this.arrayWithParts.indexOf(this.arrayWithParts[i])) {
           this.arrayWithParts.splice(index, 1);
+        }
+      }
+    },
+    addingToDefault() {
+      this.defaultValueArray.push(this.defaultValueParts);
+      this.control.defaultValueForAutocomplete = this.defaultValueArray;
+      this.defaultValueParts = "";
+    },
+    removingFromDefault(tt) {
+      for (let i = 0; i < this.defaultValueArray.length + 1; ++i) {
+        if (tt == this.defaultValueArray.indexOf(this.defaultValueArray[i])) {
+          this.defaultValueArray.splice(tt, 1);
         }
       }
     },

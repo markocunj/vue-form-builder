@@ -43,7 +43,6 @@ const CONTROLS = {
     name: "Input Field",
     description: "Input text single line",
     icon: "editPencil", // Follow ICON in `icon-facade.js` to see how it works.
-
     // component mapping
     fieldComponent: InputControl,
   },
@@ -305,6 +304,7 @@ const CONTROL_DEFAULT_DATA = {
   containerClass: STYLES.COLUMNS.COL4,
 
   defaultValue: "",
+  defaultValueForAutocomplete: [],
 
   rows: [],
   /**

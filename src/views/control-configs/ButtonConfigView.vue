@@ -35,7 +35,7 @@
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
-      <label> Link to send your data to: </label>
+      <label><strong> Link to send your data to: </strong></label>
       <input
         type="text"
         :class="styles.FORM.FORM_CONTROL"

@@ -3,12 +3,13 @@
     <multiselect
       v-if="test == true"
       v-model="valueS"
+      :value="value"
       :options="control.autocomplete"
       :multiple="true"
       :placeholder="control.placeholderText"
       :id="control.uniqueId"
       :name="control.name || control.uniqueId"
-      @input="updateValue(valueS)"
+      @input="updateValue(valueS, $event)"
     >
     </multiselect>
     <input
@@ -46,12 +47,18 @@ export default {
     };
   },
   mounted() {
+    if (this.control.defaultValueForAutocomplete.length > 0) {
+      this.valueS = this.control.defaultValueForAutocomplete;
+      this.updateValue(this.valueS);
+    } else {
+      this.valueS = this.control.defaultValue;
+      this.updateValue(this.valueS);
+    }
+
     if (
       this.control.autocomplete.length > 0 ||
       this.control.autocompleteLink != ""
     ) {
-      console.log(this.control.autocomplete, this.control.autocompleteLink);
-      console.log("Uso unutra");
       this.test = true;
       if (this.control.autocompleteLink != "") {
         Vue.axios
