@@ -8,6 +8,12 @@
       <input type="checkbox" v-model="checkbox" />
       <span class="slider round"></span>
     </label>
+    <div :class="styles.FORM.FORM_GROUP">
+      <label>
+        Enable multiple selection?
+        <input type="checkbox" v-model="control.multiple" />
+      </label>
+    </div>
     <div v-if="!checkbox">
       <div :class="styles.FORM.FORM_GROUP">
         <label>Adding autocomplete parts</label>

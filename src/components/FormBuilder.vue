@@ -1,8 +1,15 @@
 <template>
   <div>
-    <button class="btn btn-info mr-2" @click="printData()">
+    <br />
+    <br />
+    <button
+      class="btn btn-info mr-2"
+      style="margin-left: 10px"
+      @click="printData()"
+    >
       Get JSON Form-Data (Console / Builder)
     </button>
+    <br />
     <br />
     <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-builder']">
       <!-- top configuration -->

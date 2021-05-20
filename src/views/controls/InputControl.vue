@@ -5,7 +5,7 @@
       v-model="valueS"
       :value="value"
       :options="control.autocomplete"
-      :multiple="true"
+      :multiple="control.multiple"
       :placeholder="control.placeholderText"
       :id="control.uniqueId"
       :name="control.name || control.uniqueId"

@@ -316,6 +316,8 @@ const CONTROL_DEFAULT_DATA = {
   // data of the others - coming up later
   autocompleteLink: "",
   autocomplete: [],
+
+  multiple: false, //Choose if your autocomplete search is multiple or single selection
 };
 
 /**

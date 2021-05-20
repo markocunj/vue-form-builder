@@ -7,7 +7,7 @@
     :accept="control.accept"
     :extensions="control.extensions"
     :size="control.maxSize"
-    :maximum="maximumFilesCanBeUploaded"
+    :maximum="50"
     :headers="configuredHeaders"
     :data="configuredPostData"
   >
