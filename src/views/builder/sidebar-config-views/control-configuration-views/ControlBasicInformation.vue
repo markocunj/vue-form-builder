@@ -29,6 +29,15 @@
     </div>
 
     <div :class="styles.FORM.FORM_GROUP">
+      <label>Brief description</label>
+      <input
+        type="text"
+        :class="styles.FORM.FORM_CONTROL"
+        v-model="control.subLabel"
+      />
+    </div>
+
+    <div :class="styles.FORM.FORM_GROUP">
       <label>Field Placeholder (Optional)</label>
       <input
         type="text"

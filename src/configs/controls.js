@@ -297,6 +297,7 @@ const CONTROL_DEFAULT_DATA = {
   name: "", // :name
 
   label: "",
+  subLabel: "",
   isShowLabel: true,
 
   placeholderText: "", // :placeholder
