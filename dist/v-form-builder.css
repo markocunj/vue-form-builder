@@ -1571,7 +1571,7 @@ fieldset[disabled] .multiselect {
   display: block;
   padding: 8px 40px 0 8px;
   border-radius: 5px;
-  border: 1px solid #ced4da;
+  border: 1px solid #e8e8e8;
   background: #fff;
   font-size: 14px;
 }
@@ -1662,7 +1662,7 @@ fieldset[disabled] .multiselect {
   content: "";
 }
 .multiselect__placeholder {
-  color: #636c72;
+  color: #adadad;
   display: inline-block;
   margin-bottom: 10px;
   padding-top: 2px;
