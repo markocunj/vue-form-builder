@@ -7,7 +7,9 @@
     >
     </label>
     <i v-if="isRequired" style="color: red" v-text="' *'"></i>
+    <br v-if="control.subLabel" />
     <small v-if="control.subLabel" v-text="control.subLabel"> </small>
+    <br v-if="control.subLabel" />
   </div>
 </template>
 
