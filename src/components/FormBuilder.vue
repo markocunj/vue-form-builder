@@ -1,56 +1,48 @@
 <template>
-  <div>
-    <br />
-    <br />
-    <button
-      class="btn btn-info mr-2"
-      style="margin-left: 10px"
-      @click="printData()"
-    >
+  <div :class="[styles.CONTAINER.NORMAL, 'form-padding', 'vue-form-builder']">
+    <button class="btn btn-info mr-2" @click="printData()">
       Get JSON Form-Data (Console / Builder)
     </button>
     <br />
     <br />
-    <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-builder']">
-      <!-- top configuration -->
-      <FormConfiguration
-        :permissions="permissions"
-        v-model="formData.formConfig"
-      />
+    <!-- top configuration -->
+    <FormConfiguration
+      :permissions="permissions"
+      v-model="formData.formConfig"
+    />
 
-      <!-- form headline -->
-      <div
-        class="form-headline-container"
-        v-show="formData.formConfig.isShowHeadline"
-      >
-        <h1 v-text="formData.formConfig.headline"></h1>
-        <p v-text="formData.formConfig.subHeadline"></p>
-      </div>
-
-      <!-- sections of the form -->
-      <SectionContainer
-        v-for="sectionData in sortedSections"
-        :section="sectionData"
-        :rows="formData.rows"
-        :controls="formData.controls"
-        :key="sectionData.uniqueId"
-        :permissions="permissions"
-      />
-
-      <!-- below all -->
-      <AddSectionControl
-        v-if="permissions.canAddSection"
-        @addSectionNotify="addSection"
-      />
-
-      <!-- global stuff -->
-      <GlobalSidebar :formData="formData" :permissions="permissions" />
-      <GlobalModal :formData="formData" :permissions="permissions" />
-
-      <hr />
-
-      <p class="copyright-text" v-text="copyrightText"></p>
+    <!-- form headline -->
+    <div
+      class="form-headline-container"
+      v-show="formData.formConfig.isShowHeadline"
+    >
+      <h1 v-text="formData.formConfig.headline"></h1>
+      <p v-text="formData.formConfig.subHeadline"></p>
     </div>
+
+    <!-- sections of the form -->
+    <SectionContainer
+      v-for="sectionData in sortedSections"
+      :section="sectionData"
+      :rows="formData.rows"
+      :controls="formData.controls"
+      :key="sectionData.uniqueId"
+      :permissions="permissions"
+    />
+
+    <!-- below all -->
+    <AddSectionControl
+      v-if="permissions.canAddSection"
+      @addSectionNotify="addSection"
+    />
+
+    <!-- global stuff -->
+    <GlobalSidebar :formData="formData" :permissions="permissions" />
+    <GlobalModal :formData="formData" :permissions="permissions" />
+
+    <hr />
+
+    <p class="copyright-text" v-text="copyrightText"></p>
   </div>
 </template>
 
@@ -116,3 +108,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.container {
+  max-width: 720px;
+}
+</style>

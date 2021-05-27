@@ -1,5 +1,5 @@
 <template>
-  <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-renderer']">
+  <div :class="[styles.CONTAINER.NORMAL, 'form-padding', 'vue-form-renderer']">
     <!-- Render Form Tag Or Not -->
     <form
       v-if="formData.formConfig.renderFormTag"
@@ -65,3 +65,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.container {
+  max-width: 720px;
+}
+</style>
