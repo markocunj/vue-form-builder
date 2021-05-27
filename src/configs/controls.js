@@ -302,6 +302,7 @@ const CONTROL_DEFAULT_DATA = {
   placeholderText: "", // :placeholder
 
   containerClass: STYLES.COLUMNS.COL12,
+  additionalLabelClass: "pt-3",
 
   defaultValue: "",
   defaultValueForAutocomplete: [],

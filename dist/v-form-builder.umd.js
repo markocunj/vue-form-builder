@@ -14767,6 +14767,7 @@ var CONTROL_DEFAULT_DATA = {
   placeholderText: "",
   // :placeholder
   containerClass: styles["a" /* STYLES */].COLUMNS.COL12,
+  additionalLabelClass: "pt-3",
   defaultValue: "",
   defaultValueForAutocomplete: [],
   rows: [],
