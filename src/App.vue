@@ -153,12 +153,4 @@ pre.code code {
   line-height: 19px;
   color: #ddd;
 }
-
-.multiselect__tags {
-  border: 1px solid #ced4da !important;
-}
-
-.multiselect__placeholder {
-  color: #636c72 !important;
-}
 </style>

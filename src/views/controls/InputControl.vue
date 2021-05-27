@@ -77,4 +77,12 @@ export default {
 };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-<style scoped></style>
+<style>
+.multiselect__tags {
+  border: 1px solid #ced4da !important;
+}
+
+.multiselect__placeholder {
+  color: #636c72 !important;
+}
+</style>
