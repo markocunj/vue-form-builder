@@ -12504,12 +12504,12 @@ var TextBlockControl_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var TextBlockControl = (TextBlockControl_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ba0436c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/LabelControl.vue?vue&type=template&id=271f2012&
-var LabelControlvue_type_template_id_271f2012_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{class:_vm.control.additionalLabelClass,attrs:{"id":_vm.control.uniqueId,"for":_vm.control.forAttribute},domProps:{"innerHTML":_vm._s(_vm.control.label)}})}
-var LabelControlvue_type_template_id_271f2012_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ba0436c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/LabelControl.vue?vue&type=template&id=fbcda132&
+var LabelControlvue_type_template_id_fbcda132_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{class:_vm.control.additionalLabelClass,attrs:{"id":_vm.control.uniqueId,"for":_vm.control.forAttribute},domProps:{"innerHTML":_vm._s(_vm.control.label)}})}
+var LabelControlvue_type_template_id_fbcda132_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/LabelControl.vue?vue&type=template&id=271f2012&
+// CONCATENATED MODULE: ./src/views/controls/LabelControl.vue?vue&type=template&id=fbcda132&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/LabelControl.vue?vue&type=script&lang=js&
 //
@@ -12543,8 +12543,8 @@ var LabelControlvue_type_template_id_271f2012_staticRenderFns = []
 
 var LabelControl_component = Object(componentNormalizer["a" /* default */])(
   controls_LabelControlvue_type_script_lang_js_,
-  LabelControlvue_type_template_id_271f2012_render,
-  LabelControlvue_type_template_id_271f2012_staticRenderFns,
+  LabelControlvue_type_template_id_fbcda132_render,
+  LabelControlvue_type_template_id_fbcda132_staticRenderFns,
   false,
   null,
   null,
@@ -21796,14 +21796,15 @@ var ControlViewvue_type_template_id_47538d6c_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/views/builder/ControlView.vue?vue&type=template&id=47538d6c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ba0436c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/control-views/ControlLabel.vue?vue&type=template&id=087264d7&scoped=true&
-var ControlLabelvue_type_template_id_087264d7_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"control-label-container"},[_c('label',{class:_vm.control.additionalLabelClass,attrs:{"for":_vm.control.uniqueId},domProps:{"textContent":_vm._s(_vm.control.label)}}),(_vm.control.subLabel)?_c('br'):_vm._e(),(_vm.control.subLabel)?_c('small',{domProps:{"textContent":_vm._s(_vm.control.subLabel)}}):_vm._e()])}
-var ControlLabelvue_type_template_id_087264d7_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ba0436c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/control-views/ControlLabel.vue?vue&type=template&id=27290a3a&scoped=true&
+var ControlLabelvue_type_template_id_27290a3a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"control-label-container"},[_c('label',{class:_vm.control.additionalLabelClass,attrs:{"for":_vm.control.uniqueId},domProps:{"textContent":_vm._s(_vm.control.label)}}),(_vm.isRequired)?_c('i',{staticStyle:{"color":"red"},domProps:{"textContent":_vm._s(' *')}}):_vm._e(),(_vm.control.subLabel)?_c('br'):_vm._e(),(_vm.control.subLabel)?_c('small',{domProps:{"textContent":_vm._s(_vm.control.subLabel)}}):_vm._e()])}
+var ControlLabelvue_type_template_id_27290a3a_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/builder/control-views/ControlLabel.vue?vue&type=template&id=087264d7&scoped=true&
+// CONCATENATED MODULE: ./src/views/builder/control-views/ControlLabel.vue?vue&type=template&id=27290a3a&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/builder/control-views/ControlLabel.vue?vue&type=script&lang=js&
+//
 //
 //
 //
@@ -21824,6 +21825,18 @@ var ControlLabelvue_type_template_id_087264d7_scoped_true_staticRenderFns = []
       type: Object,
       required: true
     }
+  },
+  data: function data() {
+    return {
+      isRequired: false
+    };
+  },
+  mounted: function mounted() {
+    for (var i = 0; i < this.control.validations.length; i++) {
+      if (this.control.validations[i].ruleType == "required") {
+        this.isRequired = true;
+      }
+    }
   }
 });
 // CONCATENATED MODULE: ./src/views/builder/control-views/ControlLabel.vue?vue&type=script&lang=js&
@@ -21838,11 +21851,11 @@ var ControlLabelvue_type_template_id_087264d7_scoped_true_staticRenderFns = []
 
 var ControlLabel_component = Object(componentNormalizer["a" /* default */])(
   control_views_ControlLabelvue_type_script_lang_js_,
-  ControlLabelvue_type_template_id_087264d7_scoped_true_render,
-  ControlLabelvue_type_template_id_087264d7_scoped_true_staticRenderFns,
+  ControlLabelvue_type_template_id_27290a3a_scoped_true_render,
+  ControlLabelvue_type_template_id_27290a3a_scoped_true_staticRenderFns,
   false,
   null,
-  "087264d7",
+  "27290a3a",
   null
   
 )
