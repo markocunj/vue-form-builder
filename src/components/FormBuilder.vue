@@ -1,5 +1,10 @@
 <template>
   <div :class="[styles.CONTAINER.NORMAL, 'form-padding', 'vue-form-builder']">
+    <button class="btn btn-info mr-2" @click="saveToLocalStorage()">
+      Save your form temporarily. (To test on Test page)
+    </button>
+    <br />
+    <br />
     <button class="btn btn-info mr-2" @click="printData()">
       Get JSON Form-Data (Console / Builder)
     </button>
@@ -95,6 +100,10 @@ export default {
   methods: {
     printData() {
       console.log(JSON.stringify(this.formData));
+    },
+    saveToLocalStorage() {
+      localStorage.clear();
+      localStorage.setItem("formData", JSON.stringify(this.formData));
     },
   },
   computed: {
