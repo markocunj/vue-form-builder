@@ -195,23 +195,15 @@ const CONTROLS = {
 
     // config data
     configData: {
-      // for styling
-      buttonLabel: "Select File",
-      buttonClasses: "btn btn-primary",
-
       // for components
-      postActionURL: "/your-api-post-url-to-upload",
+      postActionURL: "https://httpbin.org/post",
       extensions: ".gif,.png,.jpg,.jpeg",
-      accept: "image/gif,image/jpeg,image/png",
       maxSize: 1000, // in bytes - 0 unlimited
 
       isMultiple: false,
       maximumFiles: 1, // if multiple is on, we need to configure this one
 
-      // special configurations
-      // these will be appended when the vue-uploader-component make a request
-      headers: [],
-      postData: [],
+      defaultDropzoneMessage: "Drop your files here",
     },
 
     fieldComponent: FileUploaderControl,

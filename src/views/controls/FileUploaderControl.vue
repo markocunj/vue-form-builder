@@ -1,86 +1,38 @@
 <template>
-  <VueUploadComponent
+  <vue-dropzone
     :id="control.uniqueId"
-    :class="controlClasses"
-    v-model="files"
-    :multiple="control.isMultiple"
-    :accept="control.accept"
-    :extensions="control.extensions"
-    :size="control.maxSize"
-    :maximum="50"
-    :headers="configuredHeaders"
-    :data="configuredPostData"
-  >
-    <button
-      :class="control.buttonClasses"
-      v-text="control.buttonLabel"
-    ></button>
-  </VueUploadComponent>
+    ref="Dropzone"
+    :options="dropzoneOptions"
+  ></vue-dropzone>
 </template>
 
 <script>
 import { CONTROL_FIELD_EXTEND_MIXIN } from "@/mixins/control-field-extend-mixin";
-import VueUploadComponent from "vue-upload-component";
-
-/**
- * File Uploader Control
- * Usage:
- */
+import vue2Dropzone from "vue2-dropzone";
+import "vue2-dropzone/dist/vue2Dropzone.min.css";
 export default {
-  name: "FileUploaderControl",
   components: {
-    VueUploadComponent,
+    vueDropzone: vue2Dropzone,
   },
   mixins: [CONTROL_FIELD_EXTEND_MIXIN],
 
-  data: () => ({
-    files: null,
-  }),
-
-  methods: {},
-
-  computed: {
-    controlClasses() {
-      return this.control.additionalFieldClass;
-    },
-
-    /**
-     * Get the maximum files for multiple uploader
-     * @returns {number}
-     */
-    maximumFilesCanBeUploaded() {
-      if (this.control.isMultiple) {
-        return this.control.maximumFiles;
-      }
-
-      return 1;
-    },
-
-    configuredHeaders() {
-      if (!this.control.headers.length) {
-        return {};
-      }
-
-      const headerItems = {};
-      this.control.headers.forEach((keyValueItem) => {
-        headerItems[keyValueItem.key] = keyValueItem.value;
-      });
-
-      return headerItems;
-    },
-
-    configuredPostData() {
-      if (!this.control.postData.length) {
-        return {};
-      }
-
-      const postItems = {};
-      this.control.postData.forEach((keyValueItem) => {
-        postItems[keyValueItem.key] = keyValueItem.value;
-      });
-
-      return postItems;
-    },
+  data() {
+    return {
+      dropzoneOptions: {},
+    };
+  },
+  created() {
+    this.dropzoneOptions = {
+      url: this.control.postActionURL,
+      maxFileSize: this.control.maxSize,
+      uploadMultiple: this.control.isMultiple,
+      acceptedFiles: this.control.extensions,
+      thumbnailWidth: 150,
+      thumbnailHeight: 150,
+      addRemoveLinks: true,
+      maxFiles: this.control.maximumFiles,
+      dictDefaultMessage: this.control.defaultDropzoneMessage,
+    };
   },
 };
 </script>

@@ -1,38 +1,11 @@
 <template>
   <div>
     <div :class="styles.FORM.FORM_GROUP">
-      <label>Button Label</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="control.buttonLabel"
-      />
-    </div>
-
-    <div :class="styles.FORM.FORM_GROUP">
-      <label>Button Classes</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="control.buttonClasses"
-      />
-    </div>
-
-    <div :class="styles.FORM.FORM_GROUP">
-      <label>(API) Post-Action URL</label>
+      <strong><label>Link to send your files to:</label></strong>
       <input
         type="text"
         :class="styles.FORM.FORM_CONTROL"
         v-model="control.postActionURL"
-      />
-    </div>
-
-    <div :class="styles.FORM.FORM_GROUP">
-      <label>Accept Mimes</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="control.accept"
       />
     </div>
 
@@ -42,6 +15,15 @@
         type="text"
         :class="styles.FORM.FORM_CONTROL"
         v-model="control.extensions"
+      />
+    </div>
+
+    <div :class="styles.FORM.FORM_GROUP">
+      <label>Default dropzone message</label>
+      <input
+        type="text"
+        :class="styles.FORM.FORM_CONTROL"
+        v-model="control.defaultDropzoneMessage"
       />
     </div>
 
@@ -59,21 +41,14 @@
       <input type="checkbox" v-model="control.isMultiple" />
     </div>
 
-    <GlobalKeyValueItemConfiguration
-      :items="control.headers"
-      block-title="Additional Headers"
-      title="Header Items"
-      key-title="Header Key Name"
-      value-title="Header Value"
-    />
-
-    <GlobalKeyValueItemConfiguration
-      :items="control.postData"
-      block-title="Additional POST Data"
-      title="POST Data"
-      key-title="POST Key Name"
-      value-title="POST Value"
-    />
+    <div :class="styles.FORM.FORM_GROUP" v-if="control.isMultiple">
+      <label>Enter max amount of files:</label>
+      <input
+        type="number"
+        :class="styles.FORM.FORM_CONTROL"
+        v-model="control.maximumFiles"
+      />
+    </div>
   </div>
 </template>
 
