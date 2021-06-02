@@ -45,10 +45,42 @@
           ></strong
         >
       </div>
+      <br />
+      <div>
+        <label>Autocomplete default values</label>
+        <input
+          type="text"
+          :class="styles.FORM.FORM_CONTROL"
+          v-model="defaultValueParts"
+          v-on:keyup.enter="addingToDefault()"
+        />
+      </div>
+      <br />
+      <div class="buttons">
+        <button :class="styles.BUTTON.INFO" @click="addingToDefault()">
+          Add
+        </button>
+      </div>
+      <div
+        :class="styles.FORM.FORM_GROUP"
+        class="remove"
+        v-for="(parts, tt) in defaultValueArray"
+        :key="tt"
+      >
+        {{ parts }}
+        <strong
+          ><a
+            class="removeButton"
+            style="float: right; color: red; cursor: pointer;"
+            @click="removingFromDefault(tt)"
+            >&#215;</a
+          ></strong
+        >
+      </div>
     </div>
     <div v-else>
       <div :class="styles.FORM.FORM_GROUP">
-        <label>Adding link for parts</label>
+        <label>Import link</label>
         <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="link" />
       </div>
       <div class="buttons">
@@ -56,44 +88,13 @@
           Get
         </button>
       </div>
-
       <br />
       <div class="alert alert-success" v-if="success">
         <strong>Success!</strong> Your files are loaded.
       </div>
-      <div class="alert alert-danger" v-if="success == 'false'">
+      <div class="alert alert-danger" v-if="!success">
         <strong>Error!</strong> {{ info }}
       </div>
-    </div>
-    <div>
-      <label>Autocomplete default values</label>
-      <input
-        type="text"
-        :class="styles.FORM.FORM_CONTROL"
-        v-model="defaultValueParts"
-        v-on:keyup.enter="addingToDefault()"
-      />
-    </div>
-    <div class="buttons">
-      <button :class="styles.BUTTON.INFO" @click="addingToDefault()">
-        Add
-      </button>
-    </div>
-    <div
-      :class="styles.FORM.FORM_GROUP"
-      class="remove"
-      v-for="(parts, tt) in defaultValueArray"
-      :key="tt"
-    >
-      {{ parts }}
-      <strong
-        ><a
-          class="removeButton"
-          style="float: right; color: red; cursor: pointer;"
-          @click="removingFromDefault(tt)"
-          >&#215;</a
-        ></strong
-      >
     </div>
   </SidebarToggleableContainer>
 </template>
@@ -116,7 +117,7 @@ export default {
       arrayWithParts: [],
       autoCompleteParts: "",
       checkbox: null,
-      link: "",
+      link: null,
       info: null,
       success: null,
     };
