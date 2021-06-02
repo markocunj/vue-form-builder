@@ -92,7 +92,7 @@
       <div class="alert alert-success" v-if="success">
         <strong>Success!</strong> Your files are loaded.
       </div>
-      <div class="alert alert-danger" v-if="!success">
+      <div class="alert alert-danger" v-if="!success && info">
         <strong>Error!</strong> {{ info }}
       </div>
     </div>
