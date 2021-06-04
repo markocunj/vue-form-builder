@@ -202,7 +202,7 @@ const CONTROLS = {
       isMultiple: false,
       maximumFiles: 1, // if multiple is on, we need to configure this one
 
-      defaultDropzoneMessage: "Drop your files here",
+      defaultDropzoneMessage: "&#9729; Drop your files here",
     },
 
     fieldComponent: FileUploaderControl,

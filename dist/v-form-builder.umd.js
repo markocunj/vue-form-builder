@@ -11232,12 +11232,12 @@ var DropdownControl_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var DropdownControl = (DropdownControl_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=template&id=60cf3344&
-var FileUploaderControlvue_type_template_id_60cf3344_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('vue-dropzone',{ref:"Dropzone",attrs:{"id":_vm.control.uniqueId,"options":_vm.dropzoneOptions}})}
-var FileUploaderControlvue_type_template_id_60cf3344_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=template&id=4709e173&
+var FileUploaderControlvue_type_template_id_4709e173_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('vue-dropzone',{ref:"Dropzone",attrs:{"id":_vm.control.uniqueId,"options":_vm.dropzoneOptions},on:{"vdropzone-success":_vm.afterComplete,"vdropzone-removed-file":_vm.removedFile}})}
+var FileUploaderControlvue_type_template_id_4709e173_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/FileUploaderControl.vue?vue&type=template&id=60cf3344&
+// CONCATENATED MODULE: ./src/views/controls/FileUploaderControl.vue?vue&type=template&id=4709e173&
 
 // EXTERNAL MODULE: ./node_modules/vue2-dropzone/dist/vue2Dropzone.js
 var vue2Dropzone = __webpack_require__("92c3");
@@ -11247,6 +11247,9 @@ var vue2Dropzone_default = /*#__PURE__*/__webpack_require__.n(vue2Dropzone);
 var vue2Dropzone_min = __webpack_require__("1e3f");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=script&lang=js&
+
+//
+//
 //
 //
 //
@@ -11265,8 +11268,29 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
   mixins: [control_field_extend_mixin["a" /* CONTROL_FIELD_EXTEND_MIXIN */]],
   data: function data() {
     return {
-      dropzoneOptions: {}
+      dropzoneOptions: {},
+      files: null,
+      array: [],
+      test: null
     };
+  },
+  methods: {
+    afterComplete: function afterComplete(file) {
+      this.array.push(file.name);
+      this.updateValue(this.array);
+    },
+    removedFile: function removedFile(value) {
+      for (var i = 0; i < this.array.length; ++i) {
+        if (value.name == this.array[i]) {
+          var index = this.array.indexOf(this.array[i]);
+          this.array.splice(index, 1);
+
+          if (this.array.length < 1) {
+            this.setValue(this.test);
+          } else this.updateValue(this.array);
+        }
+      }
+    }
   },
   created: function created() {
     this.dropzoneOptions = {
@@ -11276,7 +11300,10 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
       acceptedFiles: this.control.extensions,
       addRemoveLinks: true,
       maxFiles: this.control.maximumFiles,
-      dictDefaultMessage: this.control.defaultDropzoneMessage
+      dictDefaultMessage: this.control.defaultDropzoneMessage,
+      dictInvalidFileType: "Invalid file.",
+      dictFileTooBig: "File is too big.",
+      dictMaxFilesExceeded: "Max files added"
     };
   }
 });
@@ -11292,8 +11319,8 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
 
 var FileUploaderControl_component = Object(componentNormalizer["a" /* default */])(
   controls_FileUploaderControlvue_type_script_lang_js_,
-  FileUploaderControlvue_type_template_id_60cf3344_render,
-  FileUploaderControlvue_type_template_id_60cf3344_staticRenderFns,
+  FileUploaderControlvue_type_template_id_4709e173_render,
+  FileUploaderControlvue_type_template_id_4709e173_staticRenderFns,
   false,
   null,
   null,
@@ -12547,7 +12574,7 @@ var CONTROLS = {
       isMultiple: false,
       maximumFiles: 1,
       // if multiple is on, we need to configure this one
-      defaultDropzoneMessage: "Drop your files here"
+      defaultDropzoneMessage: "&#9729; Drop your files here"
     },
     fieldComponent: FileUploaderControl,
     configComponent: FileUploaderConfigView
