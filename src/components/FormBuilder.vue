@@ -1,6 +1,6 @@
 <template>
   <div :class="[styles.CONTAINER.NORMAL, 'form-padding', 'vue-form-builder']">
-    <form>
+    <form @submit.stop.prevent="saveToLocalStorage()">
       <label for="test">Enter the name for your form</label>
       <input
         type="text"
@@ -11,49 +11,17 @@
         style="max-width: 300px;"
         required
       /><br />
-      <button class="btn btn-info mr-2" @click="saveToLocalStorage()">
-        Save your form temporarily. (To test on Test page)
+      <button class="btn btn-info mr-2">
+        Save your form
       </button>
-    </form>
-    <br />
-    <br />
-    <div class="[styles.CONTAINER.NORMAL, 'form-padding', 'vue-form-builder']">
-      <label for="text">Name of the form you want to edit</label>
-      <input
-        type="text"
-        id="text"
-        v-model="editName"
-        placeholder="Name of the form"
-        class="form-control"
-        style="max-width: 300px;"
-        required
-      />
       <br />
-      <button class="btn btn-success" @click="getEditData()">
-        Edit
-      </button>
-      <button
-        class="btn btn-info"
-        style="margin-left: 5px;"
-        @click="saveEditedForm(editName)"
-      >
-        Save edited form
-      </button>
-      <div v-if="failed">
-        <br />
-        <div class="alert alert-danger">
-          <strong>Error!</strong> Your form doesn't exist
-        </div>
+      <br />
+      <div v-if="success" class="alert alert-success">
+        <strong>Success!</strong> You are going to be redirected to test your
+        saved form.
       </div>
-      <div v-if="nameEmpty">
-        <br />
-        <div class="alert alert-danger">
-          <strong>Error!</strong> You have to enter the name
-        </div>
-      </div>
-    </div>
-    <br />
-    <br />
+    </form>
+    <hr style="border-width: 2px; color: black" />
     <button class="btn btn-info mr-2" @click="printData()">
       Get JSON Form-Data (Console / Builder)
     </button>
@@ -122,6 +90,9 @@ export default {
   mixins: FormBuilderBusiness,
 
   props: {
+    info: {
+      type: Object,
+    },
     permissions: {
       type: Object,
       default: () => {
@@ -138,12 +109,14 @@ export default {
       rows: {},
     },
     name: null,
-    editName: null,
-    failed: false,
-    nameEmpty: false,
+    success: false,
   }),
 
   created() {
+    if (this.info) {
+      this.formData = this.info.formData;
+      this.name = this.info.name;
+    }
     if (this.value && typeof this.value === "object") {
       this.mapping(this.value);
     } else {
@@ -156,27 +129,11 @@ export default {
     },
     saveToLocalStorage() {
       localStorage.setItem(this.name, JSON.stringify(this.formData));
-    },
-    getEditData() {
-      if (!JSON.parse(localStorage.getItem(this.editName))) {
-        this.failed = true;
-      } else {
-        this.formData = JSON.parse(localStorage.getItem(this.editName));
-        this.failed = false;
-      }
-    },
-    saveEditedForm(name) {
-      if (!JSON.parse(localStorage.getItem(name))) {
-        this.failed = true;
-      } else {
-        this.failed = false;
-        if (name) {
-          localStorage.setItem(name, JSON.stringify(this.formData));
-          this.nameEmpty = false;
-        } else {
-          this.nameEmpty = true;
-        }
-      }
+      this.success = true;
+      setTimeout(
+        () => this.$router.push({ name: "ExampleFormRenderer" }),
+        3000
+      );
     },
   },
   computed: {
