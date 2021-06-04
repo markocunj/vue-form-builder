@@ -11223,12 +11223,12 @@ var DropdownControl_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var DropdownControl = (DropdownControl_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=template&id=4e8d6717&
-var FileUploaderControlvue_type_template_id_4e8d6717_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('vue-dropzone',{ref:"Dropzone",attrs:{"id":_vm.control.uniqueId,"options":_vm.dropzoneOptions}})}
-var FileUploaderControlvue_type_template_id_4e8d6717_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=template&id=60cf3344&
+var FileUploaderControlvue_type_template_id_60cf3344_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('vue-dropzone',{ref:"Dropzone",attrs:{"id":_vm.control.uniqueId,"options":_vm.dropzoneOptions}})}
+var FileUploaderControlvue_type_template_id_60cf3344_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/FileUploaderControl.vue?vue&type=template&id=4e8d6717&
+// CONCATENATED MODULE: ./src/views/controls/FileUploaderControl.vue?vue&type=template&id=60cf3344&
 
 // EXTERNAL MODULE: ./node_modules/vue2-dropzone/dist/vue2Dropzone.js
 var vue2Dropzone = __webpack_require__("92c3");
@@ -11265,8 +11265,6 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
       maxFileSize: this.control.maxSize,
       uploadMultiple: this.control.isMultiple,
       acceptedFiles: this.control.extensions,
-      thumbnailWidth: 150,
-      thumbnailHeight: 150,
       addRemoveLinks: true,
       maxFiles: this.control.maximumFiles,
       dictDefaultMessage: this.control.defaultDropzoneMessage
@@ -11285,8 +11283,8 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
 
 var FileUploaderControl_component = Object(componentNormalizer["a" /* default */])(
   controls_FileUploaderControlvue_type_script_lang_js_,
-  FileUploaderControlvue_type_template_id_4e8d6717_render,
-  FileUploaderControlvue_type_template_id_4e8d6717_staticRenderFns,
+  FileUploaderControlvue_type_template_id_60cf3344_render,
+  FileUploaderControlvue_type_template_id_60cf3344_staticRenderFns,
   false,
   null,
   null,

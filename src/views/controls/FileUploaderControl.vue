@@ -27,8 +27,6 @@ export default {
       maxFileSize: this.control.maxSize,
       uploadMultiple: this.control.isMultiple,
       acceptedFiles: this.control.extensions,
-      thumbnailWidth: 150,
-      thumbnailHeight: 150,
       addRemoveLinks: true,
       maxFiles: this.control.maximumFiles,
       dictDefaultMessage: this.control.defaultDropzoneMessage,
