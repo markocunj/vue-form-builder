@@ -69,10 +69,14 @@ export default {
 
       // triggering form-submit if exists
       // use DOM object ??
-      const dataForPost = JSON.stringify(this.$attrs["value-container"]);
-      console.log(this.control.postLink);
+      var dataForPost = this.$attrs["value-container"];
+      console.log(dataForPost);
       Vue.axios
-        .post(this.control.postLink, dataForPost)
+        .post(this.control.postLink, dataForPost, {
+          headers: {
+            "content-type": "application/json",
+          },
+        })
         .then(function(response) {
           console.log(response);
         })

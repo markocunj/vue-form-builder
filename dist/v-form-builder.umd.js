@@ -10235,12 +10235,12 @@ var TextControl_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var TextControl = (TextControl_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/ButtonControl.vue?vue&type=template&id=908d25ee&
-var ButtonControlvue_type_template_id_908d25ee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{class:_vm.buttonClasses,attrs:{"id":_vm.control.uniqueId,"name":_vm.control.name,"type":_vm.control.buttonType || 'button'},domProps:{"textContent":_vm._s(_vm.control.label)},on:{"click":_vm.clickedHandle}})}
-var ButtonControlvue_type_template_id_908d25ee_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/ButtonControl.vue?vue&type=template&id=0e1cd4c0&
+var ButtonControlvue_type_template_id_0e1cd4c0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{class:_vm.buttonClasses,attrs:{"id":_vm.control.uniqueId,"name":_vm.control.name,"type":_vm.control.buttonType || 'button'},domProps:{"textContent":_vm._s(_vm.control.label)},on:{"click":_vm.clickedHandle}})}
+var ButtonControlvue_type_template_id_0e1cd4c0_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/ButtonControl.vue?vue&type=template&id=908d25ee&
+// CONCATENATED MODULE: ./src/views/controls/ButtonControl.vue?vue&type=template&id=0e1cd4c0&
 
 // EXTERNAL MODULE: ./src/configs/events.js
 var events = __webpack_require__("fbe6");
@@ -10317,9 +10317,13 @@ external_commonjs_vue_commonjs2_vue_root_Vue_default.a.use(vue_axios_es5_default
       // use DOM object ??
 
 
-      var dataForPost = JSON.stringify(this.$attrs["value-container"]);
-      console.log(this.control.postLink);
-      external_commonjs_vue_commonjs2_vue_root_Vue_default.a.axios.post(this.control.postLink, dataForPost).then(function (response) {
+      var dataForPost = this.$attrs["value-container"];
+      console.log(dataForPost);
+      external_commonjs_vue_commonjs2_vue_root_Vue_default.a.axios.post(this.control.postLink, dataForPost, {
+        headers: {
+          "content-type": "application/json"
+        }
+      }).then(function (response) {
         console.log(response);
       }).catch(function (error) {
         console.log(error);
@@ -10354,8 +10358,8 @@ external_commonjs_vue_commonjs2_vue_root_Vue_default.a.use(vue_axios_es5_default
 
 var ButtonControl_component = Object(componentNormalizer["a" /* default */])(
   controls_ButtonControlvue_type_script_lang_js_,
-  ButtonControlvue_type_template_id_908d25ee_render,
-  ButtonControlvue_type_template_id_908d25ee_staticRenderFns,
+  ButtonControlvue_type_template_id_0e1cd4c0_render,
+  ButtonControlvue_type_template_id_0e1cd4c0_staticRenderFns,
   false,
   null,
   null,
@@ -11232,12 +11236,12 @@ var DropdownControl_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var DropdownControl = (DropdownControl_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=template&id=4709e173&
-var FileUploaderControlvue_type_template_id_4709e173_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('vue-dropzone',{ref:"Dropzone",attrs:{"id":_vm.control.uniqueId,"options":_vm.dropzoneOptions},on:{"vdropzone-success":_vm.afterComplete,"vdropzone-removed-file":_vm.removedFile}})}
-var FileUploaderControlvue_type_template_id_4709e173_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e28f8cfa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/controls/FileUploaderControl.vue?vue&type=template&id=7e4a8748&
+var FileUploaderControlvue_type_template_id_7e4a8748_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('vue-dropzone',{ref:"Dropzone",attrs:{"id":_vm.control.uniqueId,"options":_vm.dropzoneOptions},on:{"vdropzone-success":_vm.afterComplete,"vdropzone-removed-file":_vm.removedFile}})}
+var FileUploaderControlvue_type_template_id_7e4a8748_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/controls/FileUploaderControl.vue?vue&type=template&id=4709e173&
+// CONCATENATED MODULE: ./src/views/controls/FileUploaderControl.vue?vue&type=template&id=7e4a8748&
 
 // EXTERNAL MODULE: ./node_modules/vue2-dropzone/dist/vue2Dropzone.js
 var vue2Dropzone = __webpack_require__("92c3");
@@ -11262,6 +11266,7 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
 
 
 /* harmony default export */ var FileUploaderControlvue_type_script_lang_js_ = ({
+  name: "FileUploaderComponent",
   components: {
     vueDropzone: vue2Dropzone_default.a
   },
@@ -11319,8 +11324,8 @@ var vue2Dropzone_min = __webpack_require__("1e3f");
 
 var FileUploaderControl_component = Object(componentNormalizer["a" /* default */])(
   controls_FileUploaderControlvue_type_script_lang_js_,
-  FileUploaderControlvue_type_template_id_4709e173_render,
-  FileUploaderControlvue_type_template_id_4709e173_staticRenderFns,
+  FileUploaderControlvue_type_template_id_7e4a8748_render,
+  FileUploaderControlvue_type_template_id_7e4a8748_staticRenderFns,
   false,
   null,
   null,
