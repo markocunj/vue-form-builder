@@ -2,6 +2,7 @@
   <vue-dropzone
     :id="control.uniqueId"
     ref="Dropzone"
+    class="dropzone"
     :options="dropzoneOptions"
     @vdropzone-success="afterComplete"
     @vdropzone-removed-file="removedFile"
@@ -60,3 +61,8 @@ export default {
   },
 };
 </script>
+<style>
+.dropzone .dz-preview .dz-error-message {
+  top: 200px !important;
+}
+</style>
