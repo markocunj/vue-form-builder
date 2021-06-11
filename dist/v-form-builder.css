@@ -2294,6 +2294,9 @@ fieldset[disabled] .multiselect {
 .vue-dropzone > .dz-preview .dz-error-message:after {
   display: none;
 }
+.dropzone .dz-preview .dz-error-message {
+  top: 200px !important;
+}
 .remove {
   margin-top: 10px;
   padding: 10px;
